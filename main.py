@@ -42,10 +42,10 @@ class BankAccount:
 
 
 class SavingsAccount(BankAccount):
-  """I removed the pin functionality from the savings account class because it is a 
-  subclass of the bank account class.
-  The user does not need a pin to access
-  the savings account
+  """
+    The savings account inherits the the bank account class, and can access all the methods from the bank account.
+    The addition to this class is the interest rate method. 
+    When called, the balance will add the interest amount to the savings balance.
   """
   def __init__(self, pin, interest_rate):
       super().__init__(pin)
@@ -60,7 +60,9 @@ class SavingsAccount(BankAccount):
 
 
 class FeeSavingsAccount(SavingsAccount):
-    """charges a fee every time you withdraw money."""
+    """
+    This class inherits the savings account and the bank account class. 
+     THe chnage to this class is there is a fee charged every time you withdraw money."""
     def __init__(self, pin, interest_rate, withdrawal_fee):
       super().__init__(pin, interest_rate)
       self.withdrawal_fee = withdrawal_fee
@@ -77,18 +79,17 @@ class FeeSavingsAccount(SavingsAccount):
           return self.balance
 
  
-result = BankAccount(1234)
 
+# result = BankAccount(1234)
 # print(result.deposit(1234, 200.50))
-# print(result.withdraw(1234, 500))
 # print(result.get_balance(1234))
 # print(result.change_pin(1234, 4321))
 
 
-savings = SavingsAccount(1234, 0.05)
-print(savings.deposit(1234, 100))
-print(savings.add_interest())
+# savings = SavingsAccount(1234, 0.05)
+# print(savings.deposit(1234, 100))
+# print(savings.add_interest())
 
-fee_savings = FeeSavingsAccount(1234, 0.05, 2)
-print(fee_savings.deposit(1234, 100))
-print(fee_savings.fee_withdraw(50))
+# fee_savings = FeeSavingsAccount(1234, 0.05, 2)
+# print(fee_savings.deposit(1234, 100))
+# print(fee_savings.fee_withdraw(50))
