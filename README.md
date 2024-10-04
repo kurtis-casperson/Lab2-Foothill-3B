@@ -1,8 +1,8 @@
-##Description
+# Description
 
 This is my lab 2 assignment. This lab focused on learning about inheritance and mutation of data and methods.
 
-##Steps to Follow
+# Steps to Follow
 
 Create a BankAccount class.
 As you implement your BankAccount class, you should think about the following:
